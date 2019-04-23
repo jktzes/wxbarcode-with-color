@@ -736,7 +736,7 @@ var QR = (function () {
             return genframe(string);
         },
 
-        draw: function (string, canvas, size, ecc) {
+        draw: function (string, canvas, size, ecc, color) {
             
             ecclevel = ecc || ecclevel;
             canvas = canvas || _canvas;
@@ -758,7 +758,7 @@ var QR = (function () {
             size = roundedSize;
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.setFillStyle('#000000');
+            ctx.setFillStyle(color ? color : '#000000');
 
             for (var i = 0; i < width; i++) {
                 for (var j = 0; j < width; j++) {
